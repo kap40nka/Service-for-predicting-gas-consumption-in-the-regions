@@ -1,39 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Site</title>
+    <title>Сайт Прогноза</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="input-section">
-            <label for="region">Choose region</label>
+            <label for="region">Выберите регион</label>
             <input type="text" id="region" name="region">
 
-            <label for="day">Choose day</label>
+            <label for="day">Выберите день</label>
             <input type="number" id="day" name="day" min="1" max="31">
 
-            <label for="month">Choose month</label>
+            <label for="month">Выберите месяц</label>
             <input type="number" id="month" name="month" min="1" max="12">
 
-            <label for="year">Choose year</label>
+            <label for="year">Выберите год</label>
             <input type="number" id="year" name="year" min="2011" max="2020">
 
-            <label for="days">Consumption rate</label>
+            <label for="days">Количество дней</label>
             <select id="days" name="days">
-                <option value="1">Day 1</option>
-                <option value="2">Day 2</option>
-                <option value="3">Day 3</option>
-                <option value="4">Day 4</option>
-                <option value="5">Day 5</option>
+                <option value="1">День 1</option>
+                <option value="2">День 2</option>
+                <option value="3">День 3</option>
+                <option value="4">День 4</option>
+                <option value="5">День 5</option>
             </select>
 
-            <button id="predict-btn">PREDICT</button>
+            <button id="predict-btn">Прогноз</button>
         </div>
         <div class="graph-section">
-            <h2>Consumption graph</h2>
+            <h2>Кривая газопотребления</h2>
             <div id="graph"></div>
         </div>
     </div>
@@ -64,11 +64,11 @@
                     alert(data.error);
                 } else {
                     const graph = document.getElementById('graph');
-                    graph.innerHTML = `<img src="${data.plot_url}" alt="Consumption Graph">`;
+                    graph.innerHTML = `<img src="${data.plot_url}" alt="График потребления" class="graph-image">`;
                 }
             })
             .catch((error) => {
-                console.error('Error:', error);
+                console.error('Ошибка:', error);
             });
         });
     </script>
